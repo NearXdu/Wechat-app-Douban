@@ -1,0 +1,60 @@
+<!--pages/movie/movie.wxml-->
+
+<view class='container' bindtouchmove='handleTouchMove'>
+  <view class='session-search session-search-spacing' bindtap='bindSearchNavigate'>
+
+
+    <icon style='height:16px' class="session-search-icon" type="search" size="16"></icon>
+    <view class='search-view'>
+      <text class='search-placeholder'>搜索电影</text>
+    </view>
+  </view>
+
+
+  <view class='session-page session-page-spacing session-first-spcing'>
+    <view class="session-header">
+      <text class="session-header-title">影院热映</text>
+      <text class="session-header-more" bindtap="bindMore" data-type-id="inTheaters">更多</text>
+    </view>
+
+    <view class='session-works'>
+      <scroll-view class='work-content-scroll-view' scroll-x='true'>
+        <block wx:for='{{inTheaters.movies}}' wx:for-item='item'>
+          <view class='work-wrapper' data-id='{{item.id}}' bindtap='bindWork'>
+            <view class='work-content'>
+              <image class='work-content-avatar' src='{{item.images.large}}'></image>
+              <text class='work-content-title'>{{item.title}}</text>
+              <view class="rating" style='padding-left:35rpx'>
+                <view class="rating-star allstar{{item.rating.average | 0}}"></view>
+                <text class="rating-average">{{item.rating.average}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+
+  </view>
+
+  <view class='session-page session-page-spacing'>
+    <view class="session-header">
+      <text class="session-header-title">即将上映</text>
+      <text class="session-header-more" bindtap="bindMore" data-type-id="comingSoon">更多</text>
+    </view>
+
+    <view class='session-works'>
+      <scroll-view class='work-content-scroll-view' scroll-x='true'>
+        <block wx:for='{{comingSoon.movies}}' wx:for-item='item'>
+          <view class='work-wrapper' data-id='{{item.id}}' bindtap='bindWork'>
+            <view class='work-content'>
+              <image class='work-content-avatar' src='{{item.images.large}}'></image>
+              <text class='work-content-title'>{{item.title}}</text>
+
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+
+  </view>
+</view>

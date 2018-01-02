@@ -1,0 +1,79 @@
+/* pages/movie/search/search.wxss */
+
+.search-placeholder {
+  font-size: 28rpx;
+  
+  color: #9e9e9e;
+}
+
+
+.container {
+  width: 100%;
+  min-height: 100%;
+  
+  flex-direction: column;
+  display: flex; 
+  position:relative; 
+}
+
+.movie-wrapper{
+  padding-left: 30rpx;
+  border-bottom: 1px solid #e6e6e6;
+  box-sizing: border-box;
+}
+.movie-wrapper:last-child {
+  border-bottom: 0px solid #e6e6e6;
+}
+
+
+
+.search-content {
+  flex:1;
+  margin-left: 20rpx;
+  color: #4a4a4a;
+  font-size: 28rpx;
+}
+
+.search-cancel {
+  color: #9e9e9e;
+  width: 60rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.search-delete {
+  margin-right: 20rpx;
+}
+
+.movie-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 30rpx 0rpx 30rpx 0rpx;
+}
+
+
+.movie-content .poster{
+  width:160rpx;
+  height:200rpx;
+}
+
+.summery{
+  width:100%;
+  margin-left:20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-content .title{
+  width:100%;
+  font-size:32rpx;
+  color: #4a4a4a;
+  font-weight: 600;
+}
+
+.movie-content .info{
+  width:100%;
+  font-size: 28rpx;
+  color: #9e9e9e;
+}

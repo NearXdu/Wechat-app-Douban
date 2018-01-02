@@ -1,0 +1,56 @@
+<!--pages/movie/movie-detail/movie-detail.wxml-->
+
+<view class='container'>
+  <loading hidden="{{hiddenLoadding}}">加载中</loading>
+  <!--海报  -->
+  <view class='session-poster session-poster-spacing'>
+    <image class='poster' data-poster-url='{{movie.images.large}}' bindtap='bindPoster' src='{{movie.images.large}}'></image>
+    <image class='blur' src='{{movie.images.large}}'></image>
+  </view>
+  <view class='session-summary'>
+    <view class='movie-summary'>
+      <text class='title'>{{movie.title}}</text>
+      <text class='subtype'>{{movie.year}}/{{movie.genres}}</text>
+      <text class='aka'>{{movie.aka}}</text>
+      <text class='countries'>{{movie.countries}}</text>
+    </view>
+
+    <view class="movie-rating">
+      <text class="average">{{movie.rating.average}}</text>
+      <view class="rating">
+        <view class="rating-star allstar{{movie.rating.average | 0}}"></view>
+      </view>
+      <text class="ratings_count">{{movie.ratingCount}}</text>
+    </view>
+  </view>
+
+  <view class='session-wish-do'>
+    <text class='wish-to-watch' catchtap='bindWish'>想看</text>
+    <text class='already-watched' data-id='{{movie.id}}' catchtap='bindAlready'>看过</text>
+  </view>
+
+  <view class='session-detail'>
+    <text class='desc'>简介</text>
+    <block wx:if='{{movie.summary.length>0}}'>
+      <view class='desc-wrapper'>
+        <text class="desc-content {{showAllDesc? 'desc-content-auto':'desc-content-3line'}}">{{movie.summary}}</text>
+        <text bindtap='bindExpand' class='expand' wx:if='{{!showAllDesc}}'>展开</text>
+        <text bindtap='bindCutoff' class='cut-off' wx:else>收起</text>
+      </view>
+    </block>
+  </view>
+
+  <view class='session-film-maker'>
+    <text class='film-maker-text'>影人</text>
+    <scroll-view scroll-x='true' class='film-maker-scroll-view'>
+      <block wx:for='{{movie.filmMaker}}' wx:for-item='item'>
+        <view class='film-maker-wrapper' data-id='{{item.id}}' data-avatars='{{item.avatars}}' bindtap='bindFilmMaker'>
+          <view class='film-maker-content'>
+            <image class='film-maker-avatar' src='{{item.avatars.large}}'></image>
+            <text class='film-maker-name'>{{item.name}}</text>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

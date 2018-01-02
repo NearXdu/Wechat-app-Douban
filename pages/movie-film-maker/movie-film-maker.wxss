@@ -1,0 +1,115 @@
+/* pages/movie-film-maker/movie-film-maker.wxss */
+@import "/pages/template/movie-rating/movie-rating-template.wxss";
+
+.session-poster {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 0rem;
+  /* background: #e9e9e9; */
+}
+
+.session-poster-spacing {
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+
+.session-poster .poster {
+  /* display: inline-block; */
+  margin: 0rpx auto;
+  text-align: center;
+  width: 300rpx;
+  height: 440rpx;
+  position: relative;
+  z-index: 1;
+}
+
+.session-poster .blur {
+  height: 500rpx;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  filter: blur(30px);
+  -webkit-filter: blur(30px);
+}
+
+.session-summary {
+  height: 200rpx;
+  align-content: center;
+}
+
+.session-summary .film-maker-summary {
+  display: flex;
+  flex-direction: column;
+  margin: 30rpx;
+}
+
+.session-summary .film-maker-summary .name {
+  width: 100%;
+  color: #4a4a4a;
+  font-size: 42rpx;
+  font-weight: 700;
+  line-height: 1.6;
+  word-break: keep-all;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.session-summary .film-maker-summary .name-en {
+  color: #9e9e9e;
+  font-size: 24rpx;
+}
+
+.session-summary .film-maker-summary .born {
+  color: #9e9e9e;
+  font-size: 24rpx;
+}
+
+.session-works {
+  padding: 0rpx 30rpx 0 30rpx;
+  margin: 20rpx 0rpx 20rpx 0rpx;
+}
+
+.session-works .work-title {
+  color: #9e9e9e;
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+
+.session-works .work-wrapper {
+  display: inline-block;
+}
+
+.session-works .work-wrapper .work-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.session-works  .work-wrapper .work-content .work-content-avatar {
+  width: 220rpx;
+  height: 320rpx;
+  margin: 15rpx;
+}
+.session-works  .work-wrapper .work-content .work-content-avatar:first-child {
+  margin-left: 0rpx;
+}
+.session-works  .work-wrapper .work-content .work-content-avatar:last-child {
+  margin-right: 0rpx;
+}
+
+.session-works  .work-wrapper .work-content .work-content-title {
+  width: 220rpx;
+  color: #4a4a4a;
+  font-size: 22rpx;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.session-works .work-content-scroll-view {
+  width: 100%;
+  white-space: nowrap;
+}

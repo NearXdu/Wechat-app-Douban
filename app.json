@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/movie/movie",
+    "pages/search/search",
+    "pages/movie-detail/movie-detail",
+    "pages/movie-rating/movie-rating",
+    "pages/movie-film-maker/movie-film-maker",
+    "pages/movie-more/movie-more"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#32cd32",
+    "navigationBarTextStyle": "white",
+    "backgroundTextStyle": "dark",
+    "navigationBarTitleText": "豆瓣电影",
+    "enablePullDownRefresh": false
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

@@ -1,0 +1,41 @@
+<!--pages/movie/search/search.wxml-->
+<view class='container'>
+  <view style='position:fixed;width:100%'>
+    <view class='session-search session-search-spacing'>
+      <icon style="height:16px" class="search-icon" type="search" size="16"></icon>
+      <input auto-focus='true' class='search-content' placeholder-class='search-placeholder' bindinput='bindSearchInput' placeholder='搜索电影' value='{{searchValue}}'></input>
+      <block wx:if='{{showDelete}}'>
+        <icon style="height:18px" class='search-delete' type='cancel' color='#9e9e9e' size='18' bindtap='bindSearchDelete'></icon>
+      </block>
+      <text class='search-cancel' bindtap='bindSearchCancel'>取消</text>
+    </view>
+
+  </view>
+
+  <view style='margin-top:130rpx'>
+    <block wx:for='{{results.subjects}}' wx:for-item='item'>
+      <view class='movie-wrapper' data-id='{{item.id}}' bindtap='bindSearchDetail'>
+        <view class='movie-content'>
+        
+          <image class='poster' mode='aspectFit' src='{{item.images.small}}'></image>
+          <view class='summery'>
+            <text class='title'>{{item.title}}</text>
+            <text class='info'>{{item.info}}</text>
+          </view>
+
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- <scroll-view scroll-y="true" style='height:{{windowHeight}}rpx'>
+      <block wx:for='{{results.subjects}}' wx:for-item='item'>
+        <view class='movie-wrapper' data-id='{{item.id}}' bindtap='bindSearchDetail'>
+          <view class='movie-content'>
+            <image class='poster' mode='aspectFit' src='{{item.images.small}}'></image>
+          </view>
+        </view>
+      </block>
+    </scroll-view> -->
+
+
+</view>

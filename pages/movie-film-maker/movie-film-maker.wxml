@@ -1,0 +1,35 @@
+<!--pages/movie-film-maker/movie-film-maker.wxml-->
+<view class='container'>
+  <loading hidden="{{hiddenLoadding}}">加载中</loading>
+  <!--海报  -->
+  <view class='session-poster session-poster-spacing'>
+    <image class='poster' data-poster-url='{{movie.avatars.large}}' bindtap='bindPoster' src='{{movie.avatars.large}}'></image>
+    <image class='blur' src='{{movie.avatars.large}}'></image>
+  </view>
+
+  <view class='session-summary'>
+    <view class='film-maker-summary'>
+      <text class='name'>{{movie.name}}</text>
+      <text class='name-en'>{{movie.name_en}}</text>
+      <text class='born'>{{movie.born_place}}</text>
+    </view>
+  </view>
+
+  <view class='session-works'>
+    <text class='work-title'>代表作品</text>
+    <scroll-view scroll-x='true' class='work-content-scroll-view'>
+      <block wx:for='{{movie.works}}' wx:for-item='item'>
+        <view class='work-wrapper' data-id='{{item.id}}' bindtap='bindWork'>
+          <view class='work-content'>
+            <image class='work-content-avatar' src='{{item.images.large}}'></image>
+            <text class='work-content-title'>{{item.title}}</text>
+            <view class="rating" style='padding-left:35rpx'>
+              <view class="rating-star allstar{{item.rating.average | 0}}"></view>
+              <text class="rating-average">{{item.rating.average}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>
